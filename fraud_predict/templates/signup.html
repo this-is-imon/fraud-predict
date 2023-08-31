@@ -1,0 +1,59 @@
+<!-- signup.html -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SignUp - FaudPredict</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/signup.css' %}">
+    <link rel="icon" href="{% static 'image/logo.png' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Registration</div>
+      <div class="content">
+        <form method="post">
+          {% csrf_token %}
+          <div class="user-details">
+            <div class="input-box">
+              <span class="details">Full Name</span>
+              {{ form.full_name }}
+            </div>
+            <div class="input-box">
+              <span class="details">Username</span>
+              {{ form.username }}
+            </div>
+            <div class="input-box">
+              <span class="details">Email</span>
+              {{ form.email }}
+            </div>
+            <div class="input-box">
+              <span class="details">Phone Number</span>
+              {{ form.phone_number }}
+            </div>
+            <div class="input-box">
+              <span class="details">Password</span>
+              {{ form.password }}
+            </div>
+            <div class="input-box">
+              <span class="details">Confirm Password</span>
+              {{ form.confirm_password }}
+              {% if form.errors %}
+                <span style="color: red;">{{ form.errors.confirm_password }}</span>
+              {% endif %}
+            </div>
+          </div>
+          <div class="gender-details">
+            <span class="gender-title">Gender</span>
+            {{ form.gender }}
+          </div>
+          <div class="button">
+            <input type="submit" value="Register" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

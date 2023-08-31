@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - FraudPredict</title>
+    {% load static %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link rel="stylesheet" href="{%static "css/admin.css"%}">
+    <link rel="icon" href="{% static 'image/logo.png' %}">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo">
+            <ul class="menu">
+                <li class="active">
+                    <a href="#">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-user"></i>
+                        <span>Client History</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Statistics</span>
+                    </a>
+                </li>
+
+                <li class="logout">
+                    <a href="{% url 'logout' %}">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="main--content">
+        <div class="header--wrapper">
+            <div class="header--title">
+                <span>BRAC Bank Ltd</span>
+                <h2>FraudPredict</h2>
+            </div>
+            <div class="user--info">
+                <div class="search--box">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search"/>
+                </div>
+                <img src="{% static 'image/admin.png' %}" alt="FraudPredict Logo">            </div>
+        </div>
+    
+
+        <div class="card--container">
+            <h3 class="main--title">Today's Data</h3>
+            <div class="card--wrapper">
+            <!-- <div style="width: 100%; display: flex; flex-direction: row;"> -->
+
+                <div class="payment--card light-red">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">Transaction Details</span>
+                            <span class="amount--value">No. of Transaction : <b>1000</b></span>
+                            <span class="card-detail">Total Value: <b>1500000</b></span>
+                        </div>
+                        <i class="fas fa-dollar-sign icon"></i>
+                    </div>
+                </div>    
+                
+                <div class="payment--card light-green">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">Fraud Transaction</span>
+                            <span class="amount--value">No. of Transaction : <b>100</b></span>
+                            <span class="card-detail">Total Value: <b>500000</b></span>
+                        </div>
+                        <i class="fas fa-dollar-sign icon"></i>
+                    </div>
+                </div>
+    
+                <div class="payment--card light-blue">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">Non-Fraud Transaction</span>
+                            <span class="amount--value">No. of Transaction : <b>900</b></span>
+                            <span class="card-detail">Total Value: <b>15000</b></span>
+                        </div>
+                        <i class="fas fa-dollar-sign icon"></i>
+                    </div>
+                </div>
+
+                <div class="payment--card light-purple">
+                    <div class="card--header">
+                        <div class="amount">
+                            <span class="title">Action</span>
+                            <span class="amount--value">No. of Action <b>500</b></span>
+                            <span class="card-detail">Total Solved: <b>250</b></span>
+                        </div>
+                        <i class="fas fa-dollar-sign icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabular--wrapper">
+            <h3 class="main--title">Transaction Data</h3>
+            <div class="table--container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Card Number</th>
+                            <th>Transaction Type</th>
+                            <th>Amount</th>
+                            <th>Location</th>
+                            <th>Fraud Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>22.07.2023</td>
+                            <td>1234 5678 1234</td>
+                            <td>Withdrawl</td>
+                            <td>50000</td>
+                            <td>Gulshan</td>
+                            <td>Positive</td>
+                        </tr>
+                        <tr>
+                            <td>24.07.2023</td>
+                            <td>5634 5678 4321</td>
+                            <td>Deposit</td>
+                            <td>5000</td>
+                            <td>Mirpur</td>
+                            <td>Negative</td>
+                        </tr>
+                        <tr>
+                            <td>20.07.2023</td>
+                            <td>5689 2678 1234</td>
+                            <td>Payment</td>
+                            <td>2000</td>
+                            <td>Dhanmondi</td>
+                            <td>Negative</td>
+                        </tr>
+                        <tr>
+                            <td>21.07.2023</td>
+                            <td>3875 1890 2346</td>
+                            <td>Fund Transfer</td>
+                            <td>2345</td>
+                            <td>Uttara</td>
+                            <td>Negative</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>Total</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+
+    </div>  
+</body>
+</html>
